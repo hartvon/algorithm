@@ -11,6 +11,8 @@ int partition(std::vector<int>& nums, int lo, int hi) {
             std::swap(nums[i++], nums[j]);
         }
     }
+    // 此时的nums[i]是第一个大于pivot（nums[hi]）的数
+    // 交换后使得nums[hi]成为中位数
     std::swap(nums[i], nums[hi]);
     return i;
 }
