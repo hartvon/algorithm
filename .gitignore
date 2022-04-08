@@ -31,4 +31,6 @@
 *.out
 *.app
 
+# Costume
 .vscode/
+bin/
