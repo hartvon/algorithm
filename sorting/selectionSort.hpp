@@ -3,7 +3,8 @@
 
 #include <vector>
 
-void selectionSort(std::vector<int>& nums, int n) {
+void selectionSort(std::vector<int>& nums) {
+    int n = nums.size();
     for(int i = 0 ; i < n - 1; ++i) {
         int minIdx = i;
         for (int j = i + 1; j < n; ++j) {
