@@ -17,7 +17,8 @@ int partition(std::vector<int>& nums, int lo, int hi) {
     return i;
 }
 
-void quickSort(std::vector<int>& nums, int lo, int hi) {
+void quickSort(std::vector<int>& nums) {
+    int lo = 0, hi = nums.size() - 1;
     if (lo < hi) {
         int mid = partition(nums, lo, hi);
         quickSort(nums, lo, mid - 1);
