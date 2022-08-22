@@ -19,7 +19,8 @@ void heapify(std::vector<int>& nums, int n, int i) {
     }
 }
 
-void heapSort(std::vector<int>& nums, int lo, int hi) {
+void heapSort(std::vector<int>& nums) {
+    int lo = 0, hi = nums.size() - 1;
     for (int i = hi; i >= lo; --i) {
         heapify(nums, hi, i);
     }
@@ -27,6 +28,6 @@ void heapSort(std::vector<int>& nums, int lo, int hi) {
         std::swap(nums[lo], nums[i]);
         heapify(nums, i, lo);
     }
-    }
+}
 
 #endif  // HEAPSORT_H
