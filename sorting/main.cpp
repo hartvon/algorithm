@@ -10,7 +10,8 @@
 int main(int argc, char** argv)
 {
     std::vector<int> nums{5, 2, -1, 0, 3};
-    mergeSort(nums, 0, nums.size() - 1);
+    // Test sort algorithm here.
+    mergeSort(nums);
     
     for (auto &&i : nums) {
         std::cout << i << " ";
