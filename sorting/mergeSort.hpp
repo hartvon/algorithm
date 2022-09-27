@@ -30,12 +30,11 @@ void merge(std::vector<int>& nums, int lo, int mid, int hi) {
     while (j < n) {
         nums[k++] = rArr[j++];
     }
-}
+} 
 
-void mergeSort(std::vector<int>& nums) {
-    int lo = 0, hi = nums.size() - 1;
+void mergeSort(std::vector<int>& nums, int lo, int hi) {
     if (lo < hi) {
-        int mid = lo + (hi - lo) / 1;
+        int mid = lo + (hi - lo) / 2;  
         mergeSort(nums, lo, mid);
         mergeSort(nums, mid + 1, hi);
         merge(nums, lo, mid, hi);

@@ -4,10 +4,9 @@
 #include <vector>
 
 void selectionSort(std::vector<int>& nums) {
-    int n = nums.size();
-    for(int i = 0 ; i < n - 1; ++i) {
+    for(int i = 0 ; i < nums.size() - 1; ++i) {
         int minIdx = i;
-        for (int j = i + 1; j < n; ++j) {
+        for (int j = i + 1; j < nums.size(); ++j) {
             if (nums[j] < nums[minIdx]) {
                 minIdx = j;
             }

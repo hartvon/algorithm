@@ -5,25 +5,23 @@
 
 int partition(std::vector<int>& nums, int lo, int hi) {
     int pivot = nums[hi];
-    int i = lo;
-    for (int j = lo; j < hi; ++j) {
-        if (nums[j] < pivot) {
-            std::swap(nums[i++], nums[j]);
+    for (int i = lo; i < hi; ++i) {
+        if (nums[i] < pivot) {
+            std::swap(nums[i], nums[lo++]);
         }
     }
-    // 此时的nums[i]是第一个大于pivot（nums[hi]）的数
-    // 交换后使得nums[hi]成为中位数
-    std::swap(nums[i], nums[hi]);
-    return i;
+    // 此时的nums[lo]是第一个大于pivot（nums[hi]）的数
+    std::swap(nums[lo], nums[hi]);
+    return lo;
 }
 
-void quickSort(std::vector<int>& nums) {
-    int lo = 0, hi = nums.size() - 1;
+void quickSort(std::vector<int>& nums, int lo, int hi) {
     if (lo < hi) {
         int mid = partition(nums, lo, hi);
         quickSort(nums, lo, mid - 1);
         quickSort(nums, mid + 1, hi);
     }
 }
+
 
 #endif  // QUICKSORT_H

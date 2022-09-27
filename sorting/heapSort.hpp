@@ -3,7 +3,7 @@
 
 #include <vector>
 
-void heapify(std::vector<int>& nums, int n, int i) {
+void heapify(std::vector<int>& nums, int i, int n) {
     int largest = i;
     int lc = 2 * i + 1;
     int rc = 2 * i + 2;
@@ -15,18 +15,18 @@ void heapify(std::vector<int>& nums, int n, int i) {
     }
     if (largest != i) {
         std::swap(nums[largest], nums[i]);
-        heapify(nums, n, largest);
+        heapify(nums, largest, n);
     }
 }
 
 void heapSort(std::vector<int>& nums) {
-    int lo = 0, hi = nums.size() - 1;
-    for (int i = hi; i >= lo; --i) {
-        heapify(nums, hi, i);
+    int n = nums.size();
+    for (int i = n/2-1; i >= 0; --i) {
+        heapify(nums, i, n);
     }
-    for (int i = hi; i >= lo; --i) {
-        std::swap(nums[lo], nums[i]);
-        heapify(nums, i, lo);
+    for (int i = n-1; i >= 0; --i) {
+        std::swap(nums[i], nums[0]);
+        heapify(nums, 0, i);
     }
 }
 
